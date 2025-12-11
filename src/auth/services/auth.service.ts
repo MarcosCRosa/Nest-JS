@@ -28,7 +28,7 @@ constructor(
   }
 
   async login (usuarioLogin: UsuarioLogin) {
-    const payload = {sub: usuarioLogin.usuario}
+    const payload = {sub: usuarioLogin.usuario};
     const buscaUsuario = await this.UsuarioService.findByUsuario(usuarioLogin.usuario);
    if(!buscaUsuario){
     throw new HttpException('Usuario não encontrado!',HttpStatus.NOT_FOUND)
